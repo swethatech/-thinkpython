@@ -1,5 +1,8 @@
+import unittest
+import test
 import requests
 import pandas as pd
+
 
 data=requests.get('https://api.github.com/users')
 data=data.json()
@@ -10,8 +13,8 @@ user_name=[]
 follower_id=[]
 follower_login=[]
 
-for i in range(len(data)):
-    d1=data[i]
+for id in range(len(data)):
+    d1=data[id]
     if d1['id']%10==0:
         info=requests.get(d1['url'])
         info=info.json()
